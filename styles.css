@@ -54,8 +54,8 @@ a {
 .brand-logo {
   display: block;
   flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
+  width: 102px;
+  height: 102px;
   object-fit: contain;
 }
 

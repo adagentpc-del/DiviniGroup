@@ -52,12 +52,11 @@ a {
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  display: block;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -390,8 +389,9 @@ textarea:focus {
 }
 
 .footer-logo {
-  width: 44px;
-  height: 44px;
+  display: block;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   margin-right: 6px;
 }

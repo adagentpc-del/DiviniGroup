@@ -1,9 +1,13 @@
-var DIVINI_ENGINE_SHEET_ID = "1psDHqKY_JtNx_jOXapMXGuDpxga9clnpVFWMjxv1O20";
+var DIVINI_ENGINE_SHEET_ID = "";
 var DIVINI_ADMIN_EMAIL = "divinigroup@gmail.com";
 var STRIPE_DEEP_AUDIT_URL = "PASTE_STRIPE_PAYMENT_LINK_HERE";
 
 function createDiviniGrowthEngine() {
-  var sheet = SpreadsheetApp.openById(DIVINI_ENGINE_SHEET_ID);
+  var sheet = DIVINI_ENGINE_SHEET_ID
+    ? SpreadsheetApp.openById(DIVINI_ENGINE_SHEET_ID)
+    : SpreadsheetApp.create("Divini Growth Funnel Engine OS");
+  var engineSheetId = sheet.getId();
+  PropertiesService.getScriptProperties().setProperty("DIVINI_ENGINE_SHEET_ID", engineSheetId);
 
   var freeForm = FormApp.create("Missed Revenue Audit");
   freeForm.setDescription(
@@ -15,7 +19,7 @@ function createDiviniGrowthEngine() {
   freeForm.setCollectEmail(false);
   freeForm.setAllowResponseEdits(false);
   freeForm.setLimitOneResponsePerUser(false);
-  freeForm.setDestination(FormApp.DestinationType.SPREADSHEET, DIVINI_ENGINE_SHEET_ID);
+  freeForm.setDestination(FormApp.DestinationType.SPREADSHEET, engineSheetId);
 
   addFreeAuditQuestions_(freeForm);
 
@@ -29,13 +33,14 @@ function createDiviniGrowthEngine() {
   paidForm.setCollectEmail(false);
   paidForm.setAllowResponseEdits(false);
   paidForm.setLimitOneResponsePerUser(false);
-  paidForm.setDestination(FormApp.DestinationType.SPREADSHEET, DIVINI_ENGINE_SHEET_ID);
+  paidForm.setDestination(FormApp.DestinationType.SPREADSHEET, engineSheetId);
 
   addPaidAuditQuestions_(paidForm);
 
   createTriggers_(freeForm, paidForm);
   writeSettings_(sheet, freeForm, paidForm);
 
+  Logger.log("Divini Growth Funnel Engine Sheet URL: " + sheet.getUrl());
   Logger.log("Free Missed Revenue Audit URL: " + freeForm.getPublishedUrl());
   Logger.log("Paid Deep Revenue Growth Audit intake URL: " + paidForm.getPublishedUrl());
   Logger.log("Free form edit URL: " + freeForm.getEditUrl());
@@ -163,6 +168,7 @@ function handleFreeAuditSubmit(event) {
   var named = event.namedValues || {};
   var business = first_(named["Business name"]);
   var email = first_(named["Email"]);
+  var engineSheetId = getEngineSheetId_();
 
   MailApp.sendEmail({
     to: DIVINI_ADMIN_EMAIL,
@@ -172,7 +178,7 @@ function handleFreeAuditSubmit(event) {
       "Business: " + business + "\n" +
       "Email: " + email + "\n\n" +
       "Review the Funnel Engine OS Sheet, then send 2-3 practical fixes and invite them to the $19 Deep Revenue Growth Audit.\n\n" +
-      "Sheet: https://docs.google.com/spreadsheets/d/" + DIVINI_ENGINE_SHEET_ID + "/edit"
+      "Sheet: https://docs.google.com/spreadsheets/d/" + engineSheetId + "/edit"
   });
 }
 
@@ -180,6 +186,7 @@ function handlePaidAuditSubmit(event) {
   var named = event.namedValues || {};
   var business = first_(named["Business name"]);
   var email = first_(named["Email used at checkout"]);
+  var engineSheetId = getEngineSheetId_();
 
   MailApp.sendEmail({
     to: DIVINI_ADMIN_EMAIL,
@@ -189,7 +196,7 @@ function handlePaidAuditSubmit(event) {
       "Business: " + business + "\n" +
       "Email: " + email + "\n\n" +
       "Add this to Paid Audit Buyers and Fulfillment Board, then deliver the audit and offer setup options.\n\n" +
-      "Sheet: https://docs.google.com/spreadsheets/d/" + DIVINI_ENGINE_SHEET_ID + "/edit"
+      "Sheet: https://docs.google.com/spreadsheets/d/" + engineSheetId + "/edit"
   });
 }
 
@@ -201,6 +208,10 @@ function writeSettings_(sheet, freeForm, paidForm) {
     ["Stripe Deep Audit URL", STRIPE_DEEP_AUDIT_URL, "Paste live Stripe Payment Link here and in funnel/script.js"]
   ];
   settings.getRange(settings.getLastRow() + 1, 1, values.length, values[0].length).setValues(values);
+}
+
+function getEngineSheetId_() {
+  return PropertiesService.getScriptProperties().getProperty("DIVINI_ENGINE_SHEET_ID") || DIVINI_ENGINE_SHEET_ID;
 }
 
 function first_(value) {

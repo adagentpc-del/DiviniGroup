@@ -54,7 +54,7 @@ Confirmation:
 
 Title: `Deep Revenue Growth Audit Intake`
 
-This form should be used as the Stripe success URL after the $19 payment.
+This form should be used as the PayPal success URL after the $19 payment.
 
 Questions:
 
@@ -74,13 +74,13 @@ Questions:
 14. If the audit finds a clear fix, are you open to setup help?
 15. Required privacy confirmation
 
-## Stripe Connection
+## PayPal Connection
 
-1. Create a Stripe Payment Link for `$19`.
+1. Create a PayPal payment link for `$19`.
 2. Product name: `Deep Revenue Growth Audit`.
 3. Set the success URL to the paid intake Google Form URL.
-4. Paste the Stripe Payment Link into `stripeDeepAuditUrl` in `script.js`.
-5. Keep Stripe receipt emails on.
+4. Paste the PayPal payment link into `paypalDeepAuditUrl` in `script.js`.
+5. Keep PayPal receipt emails on.
 
 ## Site Connection
 

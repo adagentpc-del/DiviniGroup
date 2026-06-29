@@ -25,4 +25,6 @@ https://docs.google.com/forms/d/1u2rmue_4BeqDMjA2HikHEv0Tt8K9zdDP8HUdM4J9p6g/edi
 
 The public site's free audit form button is wired to the Free Missed Revenue Audit form.
 
-The $19 deep audit button still needs a Stripe Payment Link. Use the Paid Deep Revenue Growth Audit Intake URL as the Stripe success/redirect URL after payment.
+The $19 deep audit button is wired to PayPal: https://www.paypal.com/ncp/payment/UPW2A82RZCY6A
+
+Use the Paid Deep Revenue Growth Audit Intake URL after payment fulfillment or in PayPal follow-up messaging.

@@ -102,7 +102,7 @@ If you want the deeper breakdown, the Deep Revenue Growth Audit is $19 and maps 
 
 Here is the link:
 
-{{stripe_deep_audit_link}}
+{{paypal_deep_audit_link}}
 
 No patient or medical information is needed.
 

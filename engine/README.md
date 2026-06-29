@@ -61,7 +61,7 @@ Use Google Workspace first:
 - Google Drive
 - Gmail
 - Google Voice once available
-- Stripe Payment Links for checkout
+- PayPal payment links for checkout
 
 Use client tools only when needed:
 
@@ -97,14 +97,14 @@ Use client tools only when needed:
 
 - `funnel/index.html`: landing page with free and $19 audit sections
 - `funnel/thank-you.html`: post-submit page
-- `funnel/script.js`: Google Form and Stripe link placeholders
+- `funnel/script.js`: Google Form and PayPal link placeholders
 - `funnel/google_form_build.md`: free and paid Google Form instructions
 - `funnel/create_divini_growth_engine.gs`: Apps Script builder for free and paid forms
 - `funnel/funnel_setup.md`: funnel launch checklist
 - `full_funnel_engine.md`: full funnel and backend operating map
 - `outreach_scripts.md`: outreach and delivery scripts
 - `outreach_reply_playbook.md`: human reply handling
-- `stripe_setup.md`: Stripe Payment Link setup
+- `paypal_setup.md`: PayPal payment link setup
 - `no_hipaa_data_policy.md`: data boundary for medspa, clinic, and wellness prospects
 - `paid_sprint_delivery_sop.md`: setup and monthly delivery SOP
 - `funnel/assets/divini-hero.png`: generated website hero image
@@ -128,11 +128,11 @@ Tabs:
 
 ## Launch Steps
 
-1. Create the Stripe $19 Payment Link.
+1. Create the PayPal $19 payment link.
 2. Run `funnel/create_divini_growth_engine.gs` from `divinigroup@gmail.com`.
 3. Paste the free form URL into `googleFormUrl` in `funnel/script.js`.
-4. Paste the Stripe Payment Link into `stripeDeepAuditUrl` in `funnel/script.js`.
-5. Set the Stripe success URL to the paid intake Google Form.
+4. Paste the PayPal payment link into `deepAuditPaymentUrl` in `funnel/script.js`.
+5. Set the PayPal success URL to the paid intake Google Form.
 6. Point `divinigrowth.com` to the landing page host.
 7. Start outreach from `outreach_scripts.md`.
 

@@ -1,6 +1,6 @@
 const form = document.querySelector("#leadForm");
 const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf8bl6uEPJnBS4zS-hV9ll24ua3uJFKPV2BPzNVswDcEk4VlQ/viewform";
-const stripeDeepAuditUrl = "";
+const deepAuditPaymentUrl = "https://www.paypal.com/ncp/payment/UPW2A82RZCY6A";
 const paidAuditLink = document.querySelector("#paidAuditLink");
 
 function getExistingLeads() {
@@ -45,12 +45,12 @@ if (form) {
 
 if (paidAuditLink) {
   paidAuditLink.addEventListener("click", (event) => {
-    if (!stripeDeepAuditUrl) {
+    if (!deepAuditPaymentUrl) {
       event.preventDefault();
       alert("The $19 Deep Revenue Growth Audit checkout link is being connected. Please email divinigroup@gmail.com for access.");
       return;
     }
 
-    paidAuditLink.href = stripeDeepAuditUrl;
+    paidAuditLink.href = deepAuditPaymentUrl;
   });
 }

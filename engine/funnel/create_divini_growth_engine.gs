@@ -1,6 +1,6 @@
 var DIVINI_ENGINE_SHEET_ID = "";
 var DIVINI_ADMIN_EMAIL = "divinigroup@gmail.com";
-var STRIPE_DEEP_AUDIT_URL = "PASTE_STRIPE_PAYMENT_LINK_HERE";
+var PAYPAL_DEEP_AUDIT_URL = "https://www.paypal.com/ncp/payment/UPW2A82RZCY6A";
 
 function createDiviniGrowthEngine() {
   var sheet = DIVINI_ENGINE_SHEET_ID
@@ -208,8 +208,8 @@ function writeSettings_(sheet, freeForm, paidForm) {
   var settings = sheet.getSheetByName("Settings") || sheet.insertSheet("Settings");
   var values = [
     ["Free Form URL", freeForm.getPublishedUrl(), "Paste into googleFormUrl in funnel/script.js"],
-    ["Paid Intake Form URL", paidForm.getPublishedUrl(), "Use as Stripe success URL"],
-    ["Stripe Deep Audit URL", STRIPE_DEEP_AUDIT_URL, "Paste live Stripe Payment Link here and in funnel/script.js"]
+    ["Paid Intake Form URL", paidForm.getPublishedUrl(), "Use as PayPal follow-up URL"],
+    ["PayPal Deep Audit URL", PAYPAL_DEEP_AUDIT_URL, "Paste live PayPal payment link here and in funnel/script.js"]
   ];
   settings.getRange(settings.getLastRow() + 1, 1, values.length, values[0].length).setValues(values);
 }

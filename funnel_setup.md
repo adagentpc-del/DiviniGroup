@@ -11,8 +11,8 @@ Notification email: `divinigroup@gmail.com`
 4. New response lands in the Funnel Engine OS Sheet.
 5. Divini Growth sends 2-3 practical fixes.
 6. Qualified prospect is invited to the $19 Deep Revenue Growth Audit.
-7. Stripe collects payment.
-8. Stripe success page sends the buyer to the paid intake Google Form.
+7. PayPal collects payment.
+8. PayPal success page sends the buyer to the paid intake Google Form.
 9. Paid buyer is added to the fulfillment board.
 10. Divini Growth delivers the deeper audit and offers setup or monthly management.
 
@@ -38,12 +38,12 @@ Deep Revenue Growth Audit:
 
 ## Launch Checklist
 
-- Create the Stripe $19 Payment Link.
+- Create the PayPal $19 payment link.
 - Run `create_divini_growth_engine.gs` from `divinigroup@gmail.com`.
 - Connect form notifications to `divinigroup@gmail.com`.
 - Paste the free Google Form URL into `googleFormUrl` in `script.js`.
-- Paste the Stripe Payment Link into `stripeDeepAuditUrl` in `script.js`.
-- Set the Stripe success URL to the paid intake Google Form.
+- Paste the PayPal payment link into `paypalDeepAuditUrl` in `script.js`.
+- Set the PayPal success URL to the paid intake Google Form.
 - Point `divinigrowth.com` to the landing page host.
 - Add analytics after the first 10-20 outreach clicks.
 
@@ -83,7 +83,7 @@ If you want the deeper breakdown, the $19 Deep Revenue Growth Audit maps the ful
 
 Here is the link:
 
-{{stripe_deep_audit_link}}
+{{paypal_deep_audit_link}}
 
 No patient or medical information is needed.
 

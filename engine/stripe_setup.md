@@ -1,4 +1,4 @@
-# Stripe Setup
+# PayPal Setup
 
 ## Product 1
 
@@ -37,24 +37,24 @@ Higher tiers:
 
 ## Placement
 
-After creating the $19 Payment Link in Stripe:
+After creating the $19 payment link in PayPal:
 
-1. Copy the Payment Link.
+1. Copy the payment link.
 2. Open `funnel/script.js`.
 3. Paste it into:
 
 ```js
-const stripeDeepAuditUrl = "PASTE_STRIPE_LINK_HERE";
+const paypalDeepAuditUrl = "PASTE_STRIPE_LINK_HERE";
 ```
 
-4. Set the Stripe success page to the paid audit intake Google Form.
-5. Keep Stripe receipts on.
-6. Make sure the business name shown in Stripe is Divini Group or the correct Divini Growth billing descriptor.
+4. Set the PayPal success page to the paid audit intake Google Form.
+5. Keep PayPal receipts on.
+6. Make sure the business name shown in PayPal is Divini Group or the correct Divini Growth billing descriptor.
 
 ## Notes
 
 - Do not collect card information on the Divini Growth website.
-- Let Stripe host checkout.
+- Let PayPal host checkout.
 - Do not promise specific revenue outcomes.
 - The audit is an operational review, not legal, medical, or clinical advice.
 

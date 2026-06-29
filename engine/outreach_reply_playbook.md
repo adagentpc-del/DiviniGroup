@@ -138,7 +138,7 @@ If you want the deeper breakdown, I created a $19 Deep Revenue Growth Audit that
 
 Here is the link:
 
-{{stripe_deep_audit_link}}
+{{paypal_deep_audit_link}}
 
 No patient or medical information is needed.
 

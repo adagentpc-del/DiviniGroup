@@ -156,11 +156,11 @@ Tabs:
 
 ## Launch Checklist
 
-1. Create Stripe Payment Link for $19 Deep Revenue Growth Audit.
-2. Paste that link into `stripeDeepAuditUrl` in `funnel/script.js`.
+1. Create PayPal payment link for $19 Deep Revenue Growth Audit.
+2. Paste that link into `paypalDeepAuditUrl` in `funnel/script.js`.
 3. Run `funnel/create_divini_growth_engine.gs` in Google Apps Script from `divinigroup@gmail.com`.
 4. Paste the live free Google Form URL into `googleFormUrl` in `funnel/script.js`.
-5. Add the paid intake Google Form link to the Stripe success page.
+5. Add the paid intake Google Form link to the PayPal success page.
 6. Point `divinigrowth.com` to the landing page host.
 7. Start outreach from `outreach_scripts.md`.
 8. Track every touch in the Funnel Engine OS Sheet.

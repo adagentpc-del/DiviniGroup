@@ -15,7 +15,7 @@ divinigroup@gmail.com
 - `index.html`: public landing page for the free Missed Revenue Audit.
 - `thank-you.html`: post opt-in confirmation page.
 - `styles.css`, `script.js`, `assets/`: website files.
-- `engine/`: full internal funnel, outreach, fulfillment, Google Forms, Stripe, and operating docs.
+- `engine/`: full internal funnel, outreach, fulfillment, Google Forms, PayPal, and operating docs.
 - `CNAME`: GitHub Pages custom domain setting for `divinigrowth.com`.
 
 ## Funnel Flow
@@ -26,7 +26,7 @@ divinigroup@gmail.com
 4. Prospect is offered the $19 Deep Revenue Growth Audit.
 5. Paid intake routes into the Divini Growth backend sheet.
 6. Divini Growth reviews the submission and offers the correct monthly service.
-7. Monthly service is billed through Stripe and fulfilled through the backend operating tracker.
+7. Monthly service is billed through PayPal and fulfilled through the backend operating tracker.
 
 ## Google Workspace Setup
 
@@ -42,16 +42,16 @@ It creates the Google Form structure and connects the form flow to the Divini Gr
 
 If any Google Sheet or Form was accidentally created under another Google account, recreate it from the Apps Script under `divinigroup@gmail.com`. That is cleaner than transferring ownership because forms, sheets, triggers, and permissions can break when moved between Google accounts.
 
-## Stripe Setup
+## PayPal Setup
 
-Create a Stripe Payment Link for:
+Create a PayPal payment link for:
 
 - Product: Deep Revenue Growth Audit
 - Price: $19
 - Success URL: the paid intake Google Form URL
 - Receipt email: customer email
 
-Then paste the Stripe Payment Link into `script.js` as `stripeDeepAuditUrl`.
+Then paste the PayPal payment link into `script.js` as `deepAuditPaymentUrl`.
 
 ## GoDaddy DNS For GitHub Pages
 

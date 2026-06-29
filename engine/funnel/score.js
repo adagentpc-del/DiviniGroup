@@ -10,6 +10,13 @@ function labelFor(score) {
   return "Low to moderate leak risk";
 }
 
+function normalizeUrl(value) {
+  const trimmed = String(value || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
 function calculateResult(formData) {
   const avgValue = numberValue(formData, "avg_value");
   const monthlyLeads = numberValue(formData, "monthly_leads");
@@ -47,7 +54,7 @@ function calculateResult(formData) {
     name: formData.get("name")?.trim() || "",
     email: formData.get("email")?.trim() || "",
     business: formData.get("business")?.trim() || "",
-    website: formData.get("website")?.trim() || "",
+    website: normalizeUrl(formData.get("website")),
     business_type: formData.get("business_type") || "",
     issue: formData.get("issue")?.trim() || "",
     score,

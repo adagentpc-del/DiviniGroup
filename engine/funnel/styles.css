@@ -597,3 +597,63 @@ textarea:focus {
     position: relative;
   }
 }
+
+/* Readability and premium polish pass */
+.offer-box,
+.contrast .offer-box,
+.contrast .score-card,
+.contrast .check-item {
+  color: var(--ink);
+}
+
+.offer-box h2,
+.offer-box h3,
+.offer-box p,
+.offer-box li,
+.contrast .offer-box h2,
+.contrast .offer-box h3,
+.contrast .offer-box p,
+.contrast .offer-box li {
+  color: var(--ink);
+}
+
+.contrast .offer-box .form-note,
+.offer-box .form-note {
+  color: var(--muted);
+}
+
+.contrast .plain-list li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.contrast .offer-box .plain-list li {
+  color: var(--ink);
+}
+
+.section h2,
+.section h1,
+.audit-hero h1,
+.results-hero h1 {
+  text-wrap: balance;
+}
+
+.hero-content {
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.28);
+}
+
+.lead-form,
+.offer-box,
+.score-card,
+.check-item {
+  border-radius: 18px;
+}
+
+.button.primary:hover,
+.button.secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(23, 33, 31, 0.16);
+}
+
+.button {
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}

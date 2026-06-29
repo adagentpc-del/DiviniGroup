@@ -17,6 +17,13 @@ function saveLead(lead) {
   localStorage.setItem("divini_audit_leads", JSON.stringify(leads));
 }
 
+function normalizeUrl(value) {
+  const trimmed = String(value || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
 if (form) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -32,7 +39,7 @@ if (form) {
       name: data.get("name")?.trim() || "",
       email: data.get("email")?.trim() || "",
       business: data.get("business")?.trim() || "",
-      website: data.get("website")?.trim() || "",
+      website: normalizeUrl(data.get("website")),
       business_type: data.get("business_type") || "",
       issue: data.get("issue")?.trim() || ""
     };

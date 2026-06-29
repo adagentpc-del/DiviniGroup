@@ -1,5 +1,5 @@
 const form = document.querySelector("#leadForm");
-const googleFormUrl = "";
+const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf8bl6uEPJnBS4zS-hV9ll24ua3uJFKPV2BPzNVswDcEk4VlQ/viewform";
 const stripeDeepAuditUrl = "";
 const paidAuditLink = document.querySelector("#paidAuditLink");
 

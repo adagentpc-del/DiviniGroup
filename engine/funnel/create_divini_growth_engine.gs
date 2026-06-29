@@ -40,11 +40,15 @@ function createDiviniGrowthEngine() {
   createTriggers_(freeForm, paidForm);
   writeSettings_(sheet, freeForm, paidForm);
 
-  Logger.log("Divini Growth Funnel Engine Sheet URL: " + sheet.getUrl());
-  Logger.log("Free Missed Revenue Audit URL: " + freeForm.getPublishedUrl());
-  Logger.log("Paid Deep Revenue Growth Audit intake URL: " + paidForm.getPublishedUrl());
-  Logger.log("Free form edit URL: " + freeForm.getEditUrl());
-  Logger.log("Paid form edit URL: " + paidForm.getEditUrl());
+  var linksText = buildLinksText_(sheet, freeForm, paidForm);
+  DriveApp.createFile("DIVINI GROWTH ENGINE LINKS - OPEN ME.txt", linksText, MimeType.PLAIN_TEXT);
+  MailApp.sendEmail({
+    to: DIVINI_ADMIN_EMAIL,
+    subject: "Divini Growth engine links",
+    body: linksText
+  });
+
+  Logger.log(linksText);
 }
 
 function addFreeAuditQuestions_(form) {
@@ -208,6 +212,29 @@ function writeSettings_(sheet, freeForm, paidForm) {
     ["Stripe Deep Audit URL", STRIPE_DEEP_AUDIT_URL, "Paste live Stripe Payment Link here and in funnel/script.js"]
   ];
   settings.getRange(settings.getLastRow() + 1, 1, values.length, values[0].length).setValues(values);
+}
+
+function buildLinksText_(sheet, freeForm, paidForm) {
+  return [
+    "DIVINI GROWTH ENGINE LINKS",
+    "",
+    "Sheet URL:",
+    sheet.getUrl(),
+    "",
+    "Free Missed Revenue Audit form URL:",
+    freeForm.getPublishedUrl(),
+    "",
+    "Paid Deep Revenue Growth Audit intake form URL:",
+    paidForm.getPublishedUrl(),
+    "",
+    "Free form edit URL:",
+    freeForm.getEditUrl(),
+    "",
+    "Paid form edit URL:",
+    paidForm.getEditUrl(),
+    "",
+    "Next step: send these links back to OpenClaw so the Divini Growth website can be wired to the live forms."
+  ].join("\n");
 }
 
 function getEngineSheetId_() {

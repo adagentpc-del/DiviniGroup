@@ -44,13 +44,14 @@ if (form) {
 }
 
 if (paidAuditLink) {
+  if (deepAuditPaymentUrl) {
+    paidAuditLink.href = deepAuditPaymentUrl;
+  }
+
   paidAuditLink.addEventListener("click", (event) => {
     if (!deepAuditPaymentUrl) {
       event.preventDefault();
       alert("The $19 Deep Revenue Growth Audit checkout link is being connected. Please email divinigroup@gmail.com for access.");
-      return;
     }
-
-    paidAuditLink.href = deepAuditPaymentUrl;
   });
 }

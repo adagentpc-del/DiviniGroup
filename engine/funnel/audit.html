@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revenue Leak Score | Divini Growth by Divini Group</title>
+    <meta name="description" content="Get an instant Revenue Leak Score for your medspa, wellness clinic, aesthetics clinic, salon, or consult-heavy business.">
+    <link rel="icon" type="image/png" href="./assets/logo/divini-logo-transparent.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="audit-page">
+    <header class="site-header audit-header" aria-label="Site header">
+      <a class="brand" href="./index.html" aria-label="Divini Growth home">
+        <img class="brand-logo" src="./assets/logo/divini-logo-transparent.png" alt="Divini Group logo">
+        <span>Divini Growth</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="#score-form">Score Audit</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section audit-hero">
+        <div class="section-inner two-column">
+          <div>
+            <p class="section-kicker">Revenue Leak Score</p>
+            <h1>See where leads, consults, and rebookings are slipping away.</h1>
+            <p>
+              Answer a few business operations questions. You will get an instant bottleneck score, a lost revenue estimate, and the fastest fixes to prioritize.
+            </p>
+            <p class="form-note">Do not enter patient names, medical details, treatment details, appointment records, or protected health information.</p>
+          </div>
+          <div class="offer-box">
+            <p class="offer-price">Free</p>
+            <ul class="plain-list">
+              <li>Lead response score</li>
+              <li>Booking flow score</li>
+              <li>Follow-up and reactivation score</li>
+              <li>Next-step recommendation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section form-section" id="score-form">
+        <div class="section-inner">
+          <form class="lead-form audit-form" id="revenueLeakForm">
+            <div class="form-grid">
+              <label>
+                Name
+                <input name="name" autocomplete="name" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label>
+                Business name
+                <input name="business" autocomplete="organization" required>
+              </label>
+              <label>
+                Website or booking link
+                <input type="url" name="website" placeholder="https://..." required>
+              </label>
+              <label>
+                Business type
+                <select name="business_type" required>
+                  <option value="">Select one</option>
+                  <option>Medspa</option>
+                  <option>Aesthetic clinic</option>
+                  <option>Wellness clinic</option>
+                  <option>Functional or concierge clinic</option>
+                  <option>High-ticket salon</option>
+                  <option>Tanning salon</option>
+                  <option>Other consult-heavy business</option>
+                </select>
+              </label>
+              <label>
+                Average client value
+                <select name="avg_value" required>
+                  <option value="">Select one</option>
+                  <option value="150">Under $200</option>
+                  <option value="350">$200 to $500</option>
+                  <option value="750">$500 to $1,000</option>
+                  <option value="1500">$1,000+</option>
+                </select>
+              </label>
+              <label>
+                New inquiries per month
+                <select name="monthly_leads" required>
+                  <option value="">Select one</option>
+                  <option value="10">Under 20</option>
+                  <option value="35">20 to 50</option>
+                  <option value="75">50 to 100</option>
+                  <option value="125">100+</option>
+                </select>
+              </label>
+              <label>
+                Average first response time
+                <select name="response_time" required>
+                  <option value="">Select one</option>
+                  <option value="0">Under 5 minutes</option>
+                  <option value="8">5 to 30 minutes</option>
+                  <option value="16">Same day</option>
+                  <option value="24">Next day or inconsistent</option>
+                </select>
+              </label>
+              <label>
+                Do DMs, calls, or form leads ever get missed?
+                <select name="missed_leads" required>
+                  <option value="">Select one</option>
+                  <option value="0">Rarely</option>
+                  <option value="10">Sometimes</option>
+                  <option value="20">Often</option>
+                  <option value="28">I am not sure</option>
+                </select>
+              </label>
+              <label>
+                Follow-up after no reply
+                <select name="follow_up" required>
+                  <option value="">Select one</option>
+                  <option value="0">Consistent 3+ touch follow-up</option>
+                  <option value="8">Usually one follow-up</option>
+                  <option value="18">Inconsistent</option>
+                  <option value="26">No clear system</option>
+                </select>
+              </label>
+              <label>
+                No-show or no-book follow-up
+                <select name="no_show" required>
+                  <option value="">Select one</option>
+                  <option value="0">Clear process</option>
+                  <option value="8">Sometimes</option>
+                  <option value="18">Mostly manual</option>
+                  <option value="25">No process</option>
+                </select>
+              </label>
+              <label>
+                Past client reactivation
+                <select name="reactivation" required>
+                  <option value="">Select one</option>
+                  <option value="0">Monthly campaign or system</option>
+                  <option value="8">Occasional</option>
+                  <option value="18">Rarely</option>
+                  <option value="24">No system</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              What feels like the biggest revenue leak right now?
+              <textarea name="issue" rows="4" placeholder="Example: DMs get missed, consults do not book, no-show follow-up is inconsistent." required></textarea>
+            </label>
+
+            <label class="checkbox-label">
+              <input type="checkbox" name="privacy" required>
+              I confirm I did not include patient names, medical details, treatment information, appointment records, screenshots with patient data, or protected health information.
+            </label>
+
+            <button class="button primary full" type="submit">Calculate My Revenue Leak Score</button>
+            <p class="form-note">Your instant result appears on the next page. Divini Growth can use your email to send audit follow-up and relevant service recommendations.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img class="footer-logo" src="./assets/logo/divini-logo-transparent.png" alt="Divini Group logo">
+      <span>Divini Growth by Divini Group</span>
+      <span>Business operations only. No patient or protected health information.</span>
+    </footer>
+
+    <script src="./score.js"></script>
+  </body>
+</html>

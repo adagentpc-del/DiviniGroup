@@ -484,3 +484,116 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+.audit-header {
+  position: sticky;
+  color: var(--ink);
+  background: rgba(251, 250, 247, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.audit-header .nav-links a,
+.audit-header .brand {
+  color: var(--ink);
+}
+
+.audit-hero,
+.results-hero {
+  padding-top: clamp(56px, 8vw, 96px);
+  background:
+    radial-gradient(circle at top right, rgba(217, 201, 170, 0.3), transparent 36%),
+    linear-gradient(180deg, #fbfaf7, #f2eee6);
+}
+
+.audit-hero h1,
+.results-hero h1 {
+  color: var(--ink);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.audit-form {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.checkbox-label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 620;
+}
+
+.checkbox-label input {
+  width: auto;
+  margin-top: 4px;
+}
+
+.results-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: clamp(28px, 5vw, 60px);
+  align-items: stretch;
+}
+
+.score-card {
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.score-ring {
+  --score: 0%;
+  display: grid;
+  width: 156px;
+  height: 156px;
+  place-items: center;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #ffffff 0 57%, transparent 58%),
+    conic-gradient(var(--sage-dark) var(--score), rgba(31, 90, 71, 0.12) 0);
+}
+
+.score-ring span {
+  color: var(--sage-dark);
+  font-size: 3rem;
+  font-weight: 850;
+}
+
+.results-offer h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.diagnosis-list {
+  display: grid;
+  gap: 14px;
+}
+
+.big-estimate {
+  color: var(--sage-dark) !important;
+  font-size: clamp(2.4rem, 5vw, 4.3rem) !important;
+  font-weight: 850;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .form-grid,
+  .results-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-header {
+    position: relative;
+  }
+}
